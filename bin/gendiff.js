@@ -9,9 +9,7 @@ const genDiff = (filepath1, filepath2) => {
   const jsonData2 = readFileSync(filepath2, 'utf-8');
   const data1 = JSON.parse(jsonData1);
   const data2 = JSON.parse(jsonData2);
-  const keysData1 = _.keys(data1);
-  const keysData2 = _.keys(data2);
-  const entries = _.union(keysData1, keysData2);
+  const entries = _.union(_.keys(data1), _.keys(data2));
   entries.sort();
 
   const result = entries.map((key) => {
@@ -38,3 +36,5 @@ program
     console.log(genDiff(filepath1, filepath2));
   });
 program.parse();
+
+export default genDiff;
