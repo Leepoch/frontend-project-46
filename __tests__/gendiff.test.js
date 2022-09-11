@@ -1,19 +1,19 @@
-import genDiff from '../bin/gendiff.js';
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
+import genDiff from '../src/index.js';
 
-const file1 = {
-  host: 'hexlet.io',
-  timeout: 50,
-  proxy: '123.234.53.22',
-  follow: false,
-};
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+// const getFixturePath = (filename) => path.resolve(__dirname, '../__fixtures__/', filename);
 
-const file2 = {
-  timeout: 20,
-  verbose: true,
-  host: 'hexlet.io',
-};
-const receved = '{- follow: false\nhost: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20+\n verbose:undefined\n}\nundefined';
-
+const text = `{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}`;
 test(('difference'), () => {
-  expect(genDiff(file1, file2)).toEqual(receved);
+  expect(genDiff('./__fixtures__/file1.json', './__fixtures__/file2.json')).toEqual(text);
 });

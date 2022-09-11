@@ -3,6 +3,6 @@ install:
 lint: 
 	npx eslint .  --fix
 start:
-	gendiff file1.json file2.json
-say-hello:
-	Hello, World!
+	gendiff __fixtures__/file1.json __fixtures__/file2.json
+test:
+	npx jest
