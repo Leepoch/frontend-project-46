@@ -14,6 +14,8 @@ const text = `{
   + timeout: 20
   + verbose: true
 }`;
-test(('difference'), () => {
+test(('difference json'), () => {
   expect(genDiff('./__fixtures__/file1.json', './__fixtures__/file2.json')).toEqual(text);
+  expect(genDiff('./__fixtures__/file1.yml', './__fixtures__/file2.yml')).toEqual(text);
+  expect(genDiff('./__fixtures__/file1.yaml', './__fixtures__/file2.yaml')).toEqual(text);
 });

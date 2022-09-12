@@ -10,5 +10,8 @@
 
 
 
-Сomparing two files
+Сomparing two files JSON
 [![asciicast](https://asciinema.org/a/VZv2QqQLBb2uihw3cxtEZBSub.svg)](https://asciinema.org/a/VZv2QqQLBb2uihw3cxtEZBSub)
+
+Сomparing two files JSON, yaml, yml
+[![asciicast](https://asciinema.org/a/8zClT750TyPeNwvgDXCA1LKIm.svg)](https://asciinema.org/a/8zClT750TyPeNwvgDXCA1LKIm)
