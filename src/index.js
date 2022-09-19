@@ -11,8 +11,7 @@ const genDiff = (filepath1, filepath2) => {
   const data2 = parse(jsonData2, path.extname(filepath2));
 
   const diffTree = buildDiff(data1, data2);
-  const astTree = stylish(diffTree);
-  return astTree;
+  return stylish(diffTree);
 };
 
 export default genDiff;

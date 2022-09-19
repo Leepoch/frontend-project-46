@@ -11,7 +11,7 @@ const buildTree = (data1, data2) => {
       return { type: 'removed', key, value: data1[key] };
     }
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      return { type: 'nested', key, value: buildTree(data2[key], data1[key]) };
+      return { type: 'nested', key, value: buildTree(data1[key], data2[key]) };
     }
     if (data1[key] !== data2[key]) {
       return {
