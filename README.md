@@ -15,3 +15,6 @@
 
 Сomparing two files JSON, yaml, yml
 [![asciicast](https://asciinema.org/a/8zClT750TyPeNwvgDXCA1LKIm.svg)](https://asciinema.org/a/8zClT750TyPeNwvgDXCA1LKIm)
+
+GenDiff file1.json file2.json stylish
+[![asciicast](https://asciinema.org/a/2BhymCGIPBnIbokH4MuULMAuD.svg)](https://asciinema.org/a/2BhymCGIPBnIbokH4MuULMAuD)
