@@ -1,5 +1,4 @@
 import _ from 'lodash';
-// import buildTree from './buildTree.js';
 
 const indent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2);
 
