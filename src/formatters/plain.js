@@ -1,16 +1,13 @@
 import _ from 'lodash';
 
-const getComplexValue = (value) => {
+const stringify = (value) => {
   if (_.isObject(value) === true) {
     return '[complex value]';
-  }
-  if ((value === true) || (value === false) || (typeof (value) === 'number')) {
-    return `${value}`;
   }
   if (typeof (value) === 'string') {
     return `'${value}'`;
   }
-  return null;
+  return `${value}`;
 };
 
 export default (diff) => {
@@ -19,13 +16,13 @@ export default (diff) => {
       const path = [...acc, node.key].join('.');
       switch (node.type) {
         case 'added':
-          return `Property '${path}' was added with value: ${getComplexValue(node.value)}`;
+          return `Property '${path}' was added with value: ${stringify(node.value)}`;
         case 'removed':
           return `Property '${path}' was removed`;
         case 'unchanged':
           return null;
         case 'changed':
-          return `Property '${path}' was updated. From ${getComplexValue(node.value1)} to ${getComplexValue(node.value2)}`;
+          return `Property '${path}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
         case 'nested':
           return `${iter(node.value, [path])}`;
         default:

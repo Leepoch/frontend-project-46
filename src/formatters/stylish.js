@@ -22,8 +22,11 @@ const stylish = (diff) => {
         return `${indent(depth)}- ${node.key}: ${formatValue(node.value, depth + 1)}`;
       case 'unchanged':
         return `${indent(depth)}  ${node.key}: ${formatValue(node.value, depth + 1)}`;
-      case 'changed':
-        return `${indent(depth)}- ${node.key}: ${formatValue(node.value1, depth + 1)}\n${indent(depth)}+ ${node.key}: ${formatValue(node.value2, depth + 1)}`;
+      case 'changed': {
+        const firstStr = `${indent(depth)}- ${node.key}: ${formatValue(node.value1, depth + 1)}`;
+        const secondStr = `${indent(depth)}+ ${node.key}: ${formatValue(node.value2, depth + 1)}`;
+        return [firstStr, secondStr];
+      }
       case 'nested':
         return `${indent(depth)}  ${node.key}: {\n${iter(node.value, depth + 1).join('\n')}\n${indent(depth)}  }`;
       default:
